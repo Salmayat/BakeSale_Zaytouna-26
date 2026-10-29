@@ -74,14 +74,10 @@ Maak eerst op [github.com](https://github.com) een **nieuw leeg repo** aan (zond
 - Naam: `dessert-verkoop`
 - **Public** (Netlify moet er gratis bij kunnen; de site zelf bevat geen gevoelige data, de URL van je Sheet zit er wél in — als je dat liever niet publiek wil: kies Private en authenticeer Netlify met je account)
 
-Daarna op je computer (ik kan dit ook voor je doen als je me toegang geeft):
+Daarna op je computer (lokaal is de repo al klaargezet; ik kan ook voor je pushen als je `gh` installeert):
 
 ```bash
-cd ~/dessert-verkoop
-git init
-git add .
-git commit -m "Dessert verkoop tracker"
-git branch -M main
+cd "/Users/ayatsalma/Desktop/Extra/AI-Work/dessert-verkoop"
 git remote add origin https://github.com/Salmayat/dessert-verkoop.git
 git push -u origin main
 ```
