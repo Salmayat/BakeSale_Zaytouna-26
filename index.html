@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8a5a44" />
+    <title>Dessert Verkoop</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <h1>Dessert Verkoop</h1>
+        <nav><a href="dashboard.html">Grafieken &amp; cijfers</a></nav>
+      </div>
+    </header>
+
+    <div id="banner" class="banner hidden" role="status"></div>
+
+    <section class="totals" aria-label="Totaal tot nu toe">
+      <div class="tot-card">
+        <span class="tot-label">Totaal verdiend</span>
+        <span class="tot-value" id="tot-total">—</span>
+      </div>
+      <div class="tot-card cash">
+        <span class="tot-label">Cash</span>
+        <span class="tot-value" id="tot-cash">—</span>
+      </div>
+      <div class="tot-card bank">
+        <span class="tot-label">Bank</span>
+        <span class="tot-value" id="tot-bank">—</span>
+      </div>
+    </section>
+
+    <main>
+      <section>
+        <h2>Verkoop noteren</h2>
+        <p class="hint">
+          Stel het aantal in en tik op <strong>Cash</strong> of
+          <strong>Bank</strong>.
+        </p>
+        <div id="dessert-grid" class="dessert-grid"></div>
+      </section>
+
+      <section>
+        <h2>Snel herhalen</h2>
+        <button id="repeat-btn" class="btn btn-secondary" type="button" disabled>
+          Nogmaals
+        </button>
+      </section>
+
+      <section>
+        <h2>Recente verkoopjes</h2>
+        <p class="hint">Tik op × om een foutje te corrigeren.</p>
+        <ul id="recent-list" class="recent-list"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Data staat in Google Sheets · Gasten kunnen meeschrijven via deze link</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

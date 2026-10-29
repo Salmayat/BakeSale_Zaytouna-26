@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#8a5a44" />
+    <title>Grafieken &amp; cijfers — Dessert Verkoop</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <h1>Grafieken &amp; cijfers</h1>
+        <nav>
+          <a href="index.html">Verkoop noteren</a>
+          <button id="refresh-btn" class="btn btn-secondary btn-small" type="button">
+            Vernieuw
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <div id="banner" class="banner hidden" role="status"></div>
+
+    <section class="kpi-grid" aria-label="Kerncijfers">
+      <div class="kpi-card">
+        <span class="tot-label">Totaal verdiend</span>
+        <span class="tot-value" id="kpi-total">—</span>
+      </div>
+      <div class="kpi-card cash">
+        <span class="tot-label">Cash</span>
+        <span class="tot-value" id="kpi-cash">—</span>
+      </div>
+      <div class="kpi-card bank">
+        <span class="tot-label">Bank</span>
+        <span class="tot-value" id="kpi-bank">—</span>
+      </div>
+      <div class="kpi-card">
+        <span class="tot-label">Verkochte stuks</span>
+        <span class="tot-value" id="kpi-units">—</span>
+      </div>
+      <div class="kpi-card">
+        <span class="tot-label">Meest verkocht</span>
+        <span class="tot-value top" id="kpi-top">—</span>
+      </div>
+    </section>
+
+    <main>
+      <section class="chart-row">
+        <div class="chart-box">
+          <h2>Opbrengst per dessert</h2>
+          <canvas id="chartDesserts"></canvas>
+        </div>
+        <div class="chart-box">
+          <h2>Cash versus bank</h2>
+          <canvas id="chartPayment"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <div class="chart-box wide">
+          <h2>Opbrengst over de dag</h2>
+          <canvas id="chartTime"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>Alle verkoopjes</h2>
+        <p class="hint">Tik op × om een foutje te corrigeren.</p>
+        <div class="table-wrap">
+          <table class="sales-table">
+            <thead>
+              <tr>
+                <th>Tijd</th>
+                <th>Dessert</th>
+                <th>Aantal</th>
+                <th>Betaald via</th>
+                <th>Bedrag</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="sales-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Vernieuwt automatisch elke 30 seconden · Data staat in Google Sheets</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
