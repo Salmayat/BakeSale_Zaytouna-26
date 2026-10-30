@@ -8,11 +8,10 @@ const Api = (() => {
   }
 
   async function getData() {
-    const url =
-      CONFIG.appsScriptUrl +
-      '?action=data&ts=' +
-      Date.now();
-    const res = await fetch(url, { cache: 'no-store' });
+    const url = new URL(CONFIG.appsScriptUrl);
+    url.searchParams.set('action', 'data');
+    url.searchParams.set('ts', String(Date.now()));
+    const res = await fetch(url.toString(), { cache: 'no-store' });
     if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     if (data.error) throw new Error(data.error);
