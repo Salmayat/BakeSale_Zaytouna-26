@@ -1,20 +1,22 @@
 :root {
-  --bg: #faf6f1;
+  --bg: #f3eee3;
   --surface: #ffffff;
-  --text: #2c2320;
-  --muted: #7a6a61;
-  --line: #e8ddd3;
-  --brand: #8a5a44;
-  --brand-dark: #6e4635;
-  --cash: #2e7d32;
-  --bank: #1565c0;
-  --danger: #b3261e;
-  --warn-bg: #fff4e0;
-  --warn-text: #8a5a00;
-  --error-bg: #fdecea;
-  --error-text: #b3261e;
+  --text: #22221f;
+  --muted: #5b5b52;
+  --line: #e6dfcf;
+  --brand: #124724;
+  --brand-dark: #0d351b;
+  --accent: #dcc21e;
+  --cash: #124724;
+  --bank: #dcc21e;
+  --bank-text: #0d1610;
+  --danger: #e40014;
+  --warn-bg: #faf3cf;
+  --warn-text: #6f5f00;
+  --error-bg: #fdeaea;
+  --error-text: #c00011;
   --radius: 14px;
-  --shadow: 0 1px 3px rgba(44, 35, 32, 0.08), 0 4px 14px rgba(44, 35, 32, 0.06);
+  --shadow: 0 1px 3px rgba(13, 22, 16, 0.08), 0 4px 14px rgba(13, 22, 16, 0.06);
 }
 
 * {
@@ -86,7 +88,7 @@ a {
 }
 
 .topbar a {
-  color: #fff;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
   margin-left: 0.75rem;
@@ -113,19 +115,19 @@ a {
 .banner.warn {
   background: var(--warn-bg);
   color: var(--warn-text);
-  border: 1px solid #f0d9a8;
+  border: 1px solid #ecdfa8;
 }
 
 .banner.error {
   background: var(--error-bg);
   color: var(--error-text);
-  border: 1px solid #f5c6c2;
+  border: 1px solid #f5c6c8;
 }
 
 .banner.info {
-  background: #e8f0fe;
-  color: #1a4a8a;
-  border: 1px solid #c5d8f5;
+  background: #e8f1ea;
+  color: var(--brand);
+  border: 1px solid #c8dccd;
 }
 
 .totals,
@@ -271,6 +273,7 @@ main {
 
 .btn-bank {
   background: var(--bank);
+  color: var(--bank-text);
 }
 
 .btn-secondary {
@@ -413,8 +416,15 @@ main {
 .footer {
   max-width: 1000px;
   margin: 0 auto 2rem;
-  padding: 0 1rem;
-  color: var(--muted);
+  padding: 0.9rem 1rem;
+  color: var(--bg);
   font-size: 0.85rem;
   text-align: center;
+  background: #0d1610;
+  border-top: 3px solid rgba(220, 194, 30, 0.35);
+  border-radius: var(--radius);
+}
+
+.footer p {
+  margin: 0;
 }

@@ -105,7 +105,7 @@
           {
             label: 'Opbrengst per dessert',
             data: revenueByName,
-            backgroundColor: '#c45c7a',
+            backgroundColor: '#124724',
           },
         ],
       },
@@ -123,7 +123,7 @@
         datasets: [
           {
             data: [t.cash, t.bank],
-            backgroundColor: ['#2e7d32', '#1565c0'],
+            backgroundColor: ['#124724', '#dcc21e'],
           },
         ],
       },
@@ -165,8 +165,8 @@
           {
             label: 'Cumulatieve opbrengst',
             data: values,
-            borderColor: '#8a5a44',
-            backgroundColor: 'rgba(138, 90, 68, 0.15)',
+            borderColor: '#124724',
+            backgroundColor: 'rgba(18, 71, 36, 0.15)',
             fill: true,
             tension: 0.25,
           },
