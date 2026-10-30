@@ -14,6 +14,8 @@
     kpiBank: document.getElementById('kpi-bank'),
     kpiUnits: document.getElementById('kpi-units'),
     kpiTop: document.getElementById('kpi-top'),
+    kpiBasmatie: document.getElementById('kpi-basmatie'),
+    kpiPelicano: document.getElementById('kpi-pelicano'),
     tableBody: document.getElementById('sales-body'),
     refreshBtn: document.getElementById('refresh-btn'),
   };
@@ -79,6 +81,10 @@
       }
     }
     el.kpiTop.textContent = top;
+
+    const half = Math.round((t.total / 2) * 100) / 100;
+    el.kpiBasmatie.textContent = Utils.formatEuro(half);
+    el.kpiPelicano.textContent = Utils.formatEuro(half);
   }
 
   function dessertNames() {

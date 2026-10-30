@@ -162,6 +162,14 @@ a {
   border-top: 4px solid var(--bank);
 }
 
+.kpi-card.basmatie {
+  border-top: 4px solid #124724;
+}
+
+.kpi-card.pelicano {
+  border-top: 4px solid #e40014;
+}
+
 .tot-label {
   font-size: 0.8rem;
   text-transform: uppercase;
