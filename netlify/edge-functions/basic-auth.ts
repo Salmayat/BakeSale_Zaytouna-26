@@ -1,6 +1,6 @@
 // Basic-auth poort voor de hele site (gratis Netlify-plan).
 // Credentials staan als env-vars in Netlify (NIET in de code):
-//   Site configuration → Environment variables → BASIC_USERNAME / BASIC_PASSWORD
+//   Environment variables → username / password
 //   scope: Functions · contexts: Production + Deploy Previews
 
 type EnvSource = { get?: (key: string) => string | undefined };
@@ -30,8 +30,8 @@ export default async function (
   request: Request,
   context: { next(): Response | Promise<Response> }
 ): Promise<Response> {
-  const username = envGet('BASIC_USERNAME');
-  const password = envGet('BASIC_PASSWORD');
+  const username = envGet('username');
+  const password = envGet('password');
 
   // Niet geconfigureerd? Dan géén toegang (fail closed).
   if (!username || !password) return unauthorized();
