@@ -16,8 +16,8 @@ function envGet(key: string): string | undefined {
   return undefined;
 }
 
-function unauthorized(reason: string): Response {
-  return new Response('Authenticatie vereist — ' + reason, {
+function unauthorized(): Response {
+  return new Response('Authenticatie vereist', {
     status: 401,
     headers: {
       'WWW-Authenticate':
@@ -33,15 +33,7 @@ export default async function (
   const username = envGet('username');
   const password = envGet('password');
 
-  if (!username || !password) {
-    return unauthorized(
-      'env niet zichtbaar (username=' +
-        (username ? 'ja' : 'nee') +
-        ', password=' +
-        (password ? 'ja' : 'nee') +
-        ')'
-    );
-  }
+  if (!username || !password) return unauthorized();
 
   const header = request.headers.get('Authorization');
   if (header && header.startsWith('Basic ')) {
@@ -49,7 +41,7 @@ export default async function (
     try {
       decoded = atob(header.slice(6));
     } catch {
-      return unauthorized(' Authorization-header onleesbaar');
+      return unauthorized();
     }
     const sep = decoded.indexOf(':');
     if (sep !== -1) {
@@ -58,10 +50,9 @@ export default async function (
       if (user === username && pass === password) {
         return context.next();
       }
-      return unauthorized(' verkeerde inloggegevens');
     }
   }
-  return unauthorized(' geen Authorization-header');
+  return unauthorized();
 }
 
 export const config = { path: '/*' };
